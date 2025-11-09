@@ -292,7 +292,28 @@ void MainComponent::convertFile(const juce::File& inputFile)
         profile = &fallback;
         logMessage("No matching profile found. Using default profile: " + fallback.pluginName);
     }
+// ... existing code resolves `profile` into a valid pointer ...
 
+// Experimental Zampler bank demux: split FBCh into multiple programs if possible.
+if (profile != nullptr
+    && profile->pluginId.equalsIgnoreCase("ZMPL")
+    && !presets.empty()
+    && presets.size() == 1
+    && presets.front().isChunkBased
+    && presets.front().chunkData.getSize() > 0)
+    {
+        ZamplerDemuxer demux;
+        auto split = demux.demux(*profile, presets.front());
+        if (!split.empty())
+        {
+            logMessage("Zampler demux: extracted " + juce::String((int) split.size()) + " programs from bank chunk.");
+            presets = std::move(split);
+        }
+        else
+        {
+            logMessage("Zampler demux: no reliable split found — exporting as a single preset.");
+        }
+    }
     convertPresets(presets, *profile, outDir);
     logMessage("✔ Conversion complete for " + inputFile.getFileName());
 }
