@@ -53,8 +53,21 @@ bool PluginProfileFactory::loadProfile(const juce::File& profileFile)
 
 void PluginProfileFactory::registerProfile(const PluginProfile& profile)
 {
-    if (!profile.isValid()) return;
-    profiles[profile.pluginId] = profile;
+    if (!profile.isValid())
+        return;
+
+    juce::String id = profile.pluginId.trim();
+    if (id.isEmpty())
+        return;
+
+    // Store primary profile
+    profiles[id] = profile;
+
+    // ✅ Store alias lookup
+    for (const auto& alias : profile.aliases)
+    {
+        aliasLookup[alias.toLowerCase()] = id;
+    }
 }
 
 const PluginProfile* PluginProfileFactory::getProfileById(const juce::String& pluginId) const
