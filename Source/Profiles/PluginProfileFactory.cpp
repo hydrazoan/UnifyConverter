@@ -84,6 +84,16 @@ const PluginProfile* PluginProfileFactory::getProfileByName(const juce::String& 
     return nullptr;
 }
 
+const PluginProfile* PluginProfileFactory::getProfileByAlias(const juce::String& alias) const
+{
+    auto it = aliasLookup.find(alias.toLowerCase());
+    if (it == aliasLookup.end())
+        return nullptr;
+
+    auto id = it->second;
+    return getProfileById(id);
+}
+
 juce::StringArray PluginProfileFactory::getRegisteredPluginNames() const
 {
     juce::StringArray names;
