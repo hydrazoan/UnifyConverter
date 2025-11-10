@@ -218,103 +218,97 @@ void MainComponent::convertFile(const juce::File& inputFile)
 {
     logMessage("=== Converting: " + inputFile.getFileName() + " ===");
 
-    // Output folder default
-    juce::File outDir = outputDirectory.exists() ? outputDirectory
-                                                 : inputFile.getParentDirectory().getChildFile("Converted");
-    outDir.createDirectory();
-
     std::vector<PresetData> presets;
 
-    auto ext = inputFile.getFileExtension().toLowerCase();
-    if (ext == ".fxp" || ext == ".fxb")
+    // Detect parser type
+    if (inputFile.hasFileExtension(".fxp") || inputFile.hasFileExtension(".fxb"))
     {
-        logMessage("Parsing VST2 file...");
-        presets = vst2.parseFile(inputFile);
-        if (presets.empty())
-        {
-            logMessage("ERROR: " + vst2.getLastError());
-            return;
-        }
+        logMessage("Parsing VST2 preset...");
+        presets = vstParser.parseFile(inputFile);
     }
-    else if (ext == ".vstpreset")
+    else if (inputFile.hasFileExtension(".vstpreset"))
     {
         logMessage("Parsing VST3 preset...");
-        presets = vst3.parseFile(inputFile);
-        if (presets.empty())
-        {
-            logMessage("ERROR: " + vst3.getLastError());
-            return;
-        }
+        Vst3Parser vst3Parser;
+        presets = vst3Parser.parseFile(inputFile);
     }
-    else if (ext == ".h2p" || ext == ".h2p.txt" || ext == ".uhe-preset" || ext == ".txt")
+    else if (inputFile.hasFileExtension(".h2p") ||
+             inputFile.hasFileExtension(".uhe-preset") ||
+             inputFile.hasFileExtension(".txt"))
     {
-        logMessage("Parsing U-He preset...");
-        presets = uhe.parseFile(inputFile);
-        if (presets.empty())
-        {
-            logMessage("ERROR: " + uhe.getLastError());
-            return;
-        }
+        logMessage("Parsing u-he preset...");
+        UHeParser parser;
+        presets = parser.parseFile(inputFile);
     }
     else
     {
-        logMessage("Unsupported file type: " + ext);
+        logMessage("Unsupported file type: " + inputFile.getFileExtension());
         return;
     }
 
-    // Profile resolution
-    const PluginProfile* profile = getSelectedProfile();
+    if (presets.empty())
+    {
+        logMessage("ERROR: No valid presets found in " + inputFile.getFileName());
+        return;
+    }
 
+    // --- NEW DIAGNOSTICS ---
+    const auto& first = presets.front();
+
+    if (first.pluginId.isNotEmpty())
+        logMessage("Detected VST2 pluginId: " + first.pluginId);
+
+    if (first.pluginName.isNotEmpty())
+        logMessage("Detected plugin name: " + first.pluginName);
+
+    // -----------------------
+
+    // === PROFILE MATCHING ===
+    const PluginProfile* profile = nullptr;
+
+    // 1) Match via VST2/VST3 pluginId
+    if (first.pluginId.isNotEmpty())
+    {
+        profile = profileFactory.getProfileById(first.pluginId);
+        if (profile != nullptr)
+            logMessage("Matched profile via pluginId: " + profile->pluginName);
+    }
+
+    // 2) Match via pluginName
+    if (profile == nullptr && first.pluginName.isNotEmpty())
+    {
+        profile = profileFactory.getProfileByName(first.pluginName);
+        if (profile != nullptr)
+            logMessage("Matched profile via pluginName: " + profile->pluginName);
+    }
+
+    // 3) User override via dropdown (if selected)
+    auto selectedProfileName = pluginSelector.getText();
+    if (selectedProfileName.isNotEmpty())
+    {
+        auto forced = profileFactory.getProfileByName(selectedProfileName);
+        if (forced != nullptr)
+        {
+            profile = forced;
+            logMessage("Using profile from dropdown: " + selectedProfileName);
+        }
+    }
+
+    // 4) Fallback
     if (profile == nullptr)
     {
-        const auto& first = presets.front();
+        logMessage("No profile found, using default.");
 
-        if (first.pluginName.isNotEmpty())
-            profile = profileFactory.getProfileByName(first.pluginName);
+        PluginProfile defaultProfile =
+            profileFactory.createDefaultProfile(first.pluginId, first.pluginName);
 
-        if (profile == nullptr && first.pluginId.isNotEmpty())
-            profile = profileFactory.getProfileById(first.pluginId);
-
-        if (profile != nullptr)
-            logMessage("Auto-detected profile: " + profile->pluginName + " (ID: " + profile->pluginId + ")");
+        convertPresets(presets, defaultProfile, outputDirectory);
     }
     else
     {
-        logMessage("Using manual profile: " + profile->pluginName + " (ID: " + profile->pluginId + ")");
+        convertPresets(presets, *profile, outputDirectory);
     }
 
-    PluginProfile fallback;
-    if (profile == nullptr)
-    {
-        const auto& first = presets.front();
-        fallback = profileFactory.createDefaultProfile(first.pluginId,
-                    first.pluginName.isNotEmpty() ? first.pluginName : "Unknown Plugin");
-        profile = &fallback;
-        logMessage("No matching profile found. Using default profile: " + fallback.pluginName);
-    }
-// ... existing code resolves `profile` into a valid pointer ...
-
-// Experimental Zampler bank demux: split FBCh into multiple programs if possible.
-if (profile != nullptr
-    && profile->pluginId.equalsIgnoreCase("ZMPL")
-    && !presets.empty()
-    && presets.size() == 1
-    && presets.front().isChunkBased
-    && presets.front().chunkData.getSize() > 0)
-    {
-        ZamplerDemuxer demux;
-        auto split = demux.demux(*profile, presets.front());
-        if (!split.empty())
-        {
-            logMessage("Zampler demux: extracted " + juce::String((int) split.size()) + " programs from bank chunk.");
-            presets = std::move(split);
-        }
-        else
-        {
-            logMessage("Zampler demux: no reliable split found — exporting as a single preset.");
-        }
-    }
-    convertPresets(presets, *profile, outDir);
     logMessage("✔ Conversion complete for " + inputFile.getFileName());
 }
 
