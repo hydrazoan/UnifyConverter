@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="kA2ZV3"
+              name="PresetConverter"
+              projectType="guiapp"
+              jucerVersion="7.0.9"
+              version="0.1.0"
+              bundleIdentifier="com.example.presetconverter"
+              displaySplashScreen="1"
+              reportAppUsage="0"
+              cppLanguageStandard="latest"
+              companyName="Preset Tools"
+              useAppConfig="1"
+              buildVST="0"
+              buildVST3="0"
+              buildAudioUnit="0"
+              buildAudioUnitv3="0"
+              buildRTAS="0"
+              buildAAX="0">
+
+    <!-- ========================================================= -->
+    <!-- SOURCE FILES                                               -->
+    <!-- ========================================================= -->
+    <GROUP name="Source">
+
+        <GROUP name="Core">
+            <FILE id="presetdata" file="Source/Core/PresetData.h" compile="0" resource="0"/>
+            <FILE id="profile" file="Source/Core/PluginProfile.h" compile="0" resource="0"/>
+            <FILE id="profilefactory" file="Source/Core/PluginProfileFactory.h" compile="1" resource="0"/>
+        </GROUP>
+
+        <GROUP name="Parsers">
+            <FILE id="vst2parser-h" file="Source/Parsers/Vst2Parser.h" compile="0" resource="0"/>
+            <FILE id="vst2parser-cpp" file="Source/Parsers/Vst2Parser.cpp" compile="1" resource="0"/>
+
+            <FILE id="vst3parser-h" file="Source/Parsers/Vst3Parser.h" compile="0" resource="0"/>
+            <FILE id="vst3parser-cpp" file="Source/Parsers/Vst3Parser.cpp" compile="1" resource="0"/>
+
+            <FILE id="uheparser-h" file="Source/Parsers/UHeParsers.h" compile="0" resource="0"/>
+            <FILE id="uheparser-cpp" file="Source/Parsers/UHeParsers.cpp" compile="1" resource="0"/>
+
+            <FILE id="formathelpers-h" file="Source/Parsers/FormatHelpers.h" compile="0" resource="0"/>
+        </GROUP>
+
+        <GROUP name="Generators">
+            <FILE id="unifygen-h" file="Source/Generators/UnifyPatchGenerator.h" compile="0" resource="0"/>
+            <FILE id="unifygen-cpp" file="Source/Generators/UnifyPatchGenerator.cpp" compile="1" resource="0"/>
+
+            <FILE id="gurugen-h" file="Source/Generators/GuruFileGenerator.h" compile="0" resource="0"/>
+            <FILE id="gurugen-cpp" file="Source/Generators/GuruFileGenerator.cpp" compile="1" resource="0"/>
+        </GROUP>
+
+        <GROUP name="Profiles">
+            <FILE id="profilejson" file="Source/Profiles/PluginProfileFactory.cpp" compile="1" resource="0"/>
+        </GROUP>
+
+        <GROUP name="UI">
+            <FILE id="maincomp-h" file="Source/UI/MainComponent.h" compile="0" resource="0"/>
+            <FILE id="maincomp-cpp" file="Source/UI/MainComponent.cpp" compile="1" resource="0"/>
+
+            <FILE id="main-h" file="Source/Main.h" compile="0" resource="0"/>
+            <FILE id="main-cpp" file="Source/Main.cpp" compile="1" resource="0"/>
+        </GROUP>
+
+    </GROUP>
+
+    <!-- ========================================================= -->
+    <!--  MODULES                                                   -->
+    <!-- ========================================================= -->
+
+    <MODULES>
+        <MODULE id="juce_core" showAllCode="1"/>
+        <MODULE id="juce_gui_extra" showAllCode="1"/>
+        <MODULE id="juce_gui_basics" showAllCode="1"/>
+        <MODULE id="juce_data_structures" showAllCode="1"/>
+    </MODULES>
+
+    <!-- ========================================================= -->
+    <!--  EXPORTERS                                                 -->
+    <!-- ========================================================= -->
+    <EXPORTFORMATS>
+
+        <XCODE_MAC targetFolder="Builds/MacOSX" macOSDeploymentTarget="10.13">
+            <CONFIGURATIONS>
+                <CONFIGURATION name="Debug" isDebug="1" optimisation="0" targetName="PresetConverter"/>
+                <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="PresetConverter"/>
+            </CONFIGURATIONS>
+        </XCODE_MAC>
+
+    </EXPORTFORMATS>
+
+</JUCERPROJECT>
