@@ -78,10 +78,17 @@ const PluginProfile* PluginProfileFactory::getProfileById(const juce::String& pl
 
 const PluginProfile* PluginProfileFactory::getProfileByName(const juce::String& pluginName) const
 {
-    for (const auto& kv : profiles)
-        if (kv.second.pluginName.equalsIgnoreCase(pluginName))
-            return &kv.second;
-    return nullptr;
+    auto nameLower = pluginName.toLowerCase();
+
+    // 1) Exact name match
+    for (const auto& pair : profiles)
+    {
+        if (pair.second.pluginName.toLowerCase() == nameLower)
+            return &pair.second;
+    }
+
+    // 2) ✅ Alias match
+    return getProfileByAlias(pluginName);
 }
 
 const PluginProfile* PluginProfileFactory::getProfileByAlias(const juce::String& alias) const
