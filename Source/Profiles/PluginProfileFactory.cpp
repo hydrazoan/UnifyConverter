@@ -1,14 +1,17 @@
 #include "PluginProfileFactory.h"
 
-//========== Helpers =================================================
+// ===== Helpers =================================================
 
-static juce::String getStringProp(const juce::DynamicObject* obj, const juce::Identifier& key)
+static juce::String getStringProp(const juce::DynamicObject* obj,
+                                  const juce::Identifier& key)
 {
     if (!obj->hasProperty(key)) return {};
     return obj->getProperty(key).toString();
 }
 
-static bool getBoolProp(const juce::DynamicObject* obj, const juce::Identifier& key, bool defaultValue=false)
+static bool getBoolProp(const juce::DynamicObject* obj,
+                        const juce::Identifier& key,
+                        bool defaultValue=false)
 {
     if (!obj->hasProperty(key)) return defaultValue;
     return obj->getProperty(key);
@@ -23,17 +26,17 @@ static void getStringArrayProp(const juce::DynamicObject* obj,
     if (!obj->hasProperty(key))
         return;
 
-    auto v = obj->getProperty(key);
+    auto value = obj->getProperty(key);
 
-    if (v.isArray())
+    if (value.isArray())
     {
-        auto* arr = v.getArray();
-        for (auto& item : *arr)
-            out.add(item.toString());
+        auto* arr = value.getArray();
+        for (auto& v : *arr)
+            out.add(v.toString());
     }
     else
     {
-        out.add(v.toString());
+        out.add(value.toString());
     }
 }
 
@@ -46,24 +49,26 @@ static void getVarArrayProp(const juce::DynamicObject* obj,
     if (!obj->hasProperty(key))
         return;
 
-    auto v = obj->getProperty(key);
-    if (v.isArray())
+    auto value = obj->getProperty(key);
+
+    if (value.isArray())
     {
-        auto* arr = v.getArray();
-        for (auto& item : *arr)
-            out.add(item);
+        auto* arr = value.getArray();
+        for (auto& v : *arr)
+            out.add(v);
     }
     else
     {
-        out.add(v);
+        out.add(value);
     }
 }
 
 
-//========== Main Factory ===========================================
+// ===== Factory =================================================
 
 PluginProfileFactory::PluginProfileFactory() = default;
 PluginProfileFactory::~PluginProfileFactory() = default;
+
 
 int PluginProfileFactory::loadProfilesFromDirectory(const juce::File& dir)
 {
@@ -72,27 +77,29 @@ int PluginProfileFactory::loadProfilesFromDirectory(const juce::File& dir)
     if (!dir.exists() || !dir.isDirectory())
         return 0;
 
-    juce::Array<juce::File> files;
-    dir.findChildFiles(files, juce::File::findFiles, false, "*.json");
+    juce::Array<juce::File> jsonFiles;
+    dir.findChildFiles(jsonFiles, juce::File::findFiles, true, "*.json");
 
-    for (auto& f : files)
+    for (auto& file : jsonFiles)
     {
-        auto profileOpt = loadProfile(f);
-        if (profileOpt.has_value())
-            loadedProfiles.add(profileOpt.value());
+        auto p = loadProfile(file);
+        if (p.has_value())
+            loadedProfiles.add(p.value());
     }
 
     return loadedProfiles.size();
 }
 
+
+
 std::optional<PluginProfile> PluginProfileFactory::loadProfile(const juce::File& file)
 {
-    juce::var parsed;
-    if (auto result = juce::JSON::parse(file); result.wasOk())
-        parsed = result.getResult();
-    else
+    auto result = juce::JSON::parse(file);
+
+    if (!result.wasOk())
         return {};
 
+    auto parsed = result.getResult();
     if (!parsed.isObject())
         return {};
 
@@ -100,42 +107,49 @@ std::optional<PluginProfile> PluginProfileFactory::loadProfile(const juce::File&
     if (!obj)
         return {};
 
-    PluginProfile profile;
+    PluginProfile p;
 
-    profile.pluginName       = getStringProp(obj, "pluginName");
-    profile.pluginId         = getStringProp(obj, "pluginId");
-    profile.manufacturer     = getStringProp(obj, "manufacturer");
-    profile.version          = getStringProp(obj, "version");
-    profile.isChunkBased     = getBoolProp(obj, "isChunkBased", false);
-    profile.isVst2           = getBoolProp(obj, "isVst2", false);
-    profile.isVst3           = getBoolProp(obj, "isVst3", false);
-    profile.defaultLayerType = getStringProp(obj, "defaultLayerType");
-    profile.profileAuthor    = getStringProp(obj, "profileAuthor");
-    profile.notes            = getStringProp(obj, "notes");
+    p.pluginName       = getStringProp(obj, "pluginName");
+    p.pluginId         = getStringProp(obj, "pluginId");
+    p.manufacturer     = getStringProp(obj, "manufacturer");
+    p.version          = getStringProp(obj, "version");
 
-    getStringArrayProp(obj, "aliases",        profile.aliases);
-    getStringArrayProp(obj, "requiredSamples", profile.requiredSamples);
-    getVarArrayProp(obj,    "parameterMappings", profile.parameterMappings);
+    p.isChunkBased     = getBoolProp(obj, "isChunkBased");
+    p.isVst2           = getBoolProp(obj, "isVst2");
+    p.isVst3           = getBoolProp(obj, "isVst3");
 
-    if (!profile.isValid())
+    p.defaultLayerType = getStringProp(obj, "defaultLayerType");
+    p.profileAuthor    = getStringProp(obj, "profileAuthor");
+    p.notes            = getStringProp(obj, "notes");
+
+    getStringArrayProp(obj, "aliases",         p.aliases);
+    getStringArrayProp(obj, "requiredSamples", p.requiredSamples);
+    getVarArrayProp(obj, "parameterMappings",  p.parameterMappings);
+
+    if (!p.isValid())
         return {};
 
-    return profile;
+    return p;
 }
+
+
 
 const PluginProfile* PluginProfileFactory::getProfileByName(const juce::String& name) const
 {
+    // direct name match
     for (auto& p : loadedProfiles)
-        if (p.pluginName.compareIgnoreCase(name) == 0)
+        if (p.pluginName.equalsIgnoreCase(name))
             return &p;
 
-    // try alias fallback
+    // alias match
     for (auto& p : loadedProfiles)
         if (p.aliases.contains(name, true))
             return &p;
 
     return nullptr;
 }
+
+
 
 PluginProfile PluginProfileFactory::createDefaultProfile(const juce::String& pluginId,
                                                          const juce::String& name)
