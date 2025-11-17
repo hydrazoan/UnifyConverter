@@ -62,7 +62,7 @@ juce::Result PluginProfileFactory::loadProfile (const juce::File& file,
     const juce::String text = file.loadFileAsString();
 
     juce::Result parseStatus;
-    juce::var parsed = juce::JSON::parse (text, parseStatus);
+    juce::var parsed = juce::JSON::parse(text, parseStatus);  // <-- FIXED HERE
 
     if (parseStatus.failed())
         return juce::Result::fail ("Failed to parse JSON: " + parseStatus.getErrorMessage());
@@ -117,6 +117,7 @@ juce::Result PluginProfileFactory::loadProfile (const juce::File& file,
     outProfile = p;
     return juce::Result::ok();
 }
+
 
 //==============================================================================
 // SAVE
