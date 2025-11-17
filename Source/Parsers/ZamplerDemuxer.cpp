@@ -1,4 +1,5 @@
 #include "ZamplerDemuxer.h"
+#include <cmath>
 
 static juce::String toAsciiSafe(const void* data, size_t size)
 {

@@ -1,5 +1,6 @@
 #pragma once
 #include <JuceHeader.h>
+#include <optional>
 #include "PluginProfile.h"
 
 class PluginProfileFactory
