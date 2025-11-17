@@ -1,27 +1,44 @@
 #pragma once
-#include <JuceHeader.h>
-#include <optional>
-#include "PluginProfile.h"
 
+#include <juce_core/juce_core.h>
+
+//=====================================================
+struct PluginProfile
+{
+    juce::String pluginName;
+    juce::String pluginId;
+    juce::String manufacturer;
+    juce::String version;
+
+    bool isChunkBased = false;
+    bool isVst2       = false;
+
+    int schemaVersion = 1; // For migration
+};
+
+//=====================================================
 class PluginProfileFactory
 {
 public:
-    PluginProfileFactory();
-    ~PluginProfileFactory();
+    static juce::Result loadProfile (const juce::File& file,
+                                     PluginProfile& outProfile);
 
-    /** Load all JSON profiles from a directory */
-    int loadProfilesFromDirectory(const juce::File& dir);
-
-    /** Load a single profile JSON file */
-    std::optional<PluginProfile> loadProfile(const juce::File& file);
-
-    /** Lookup by pluginName or alias */
-    const PluginProfile* getProfileByName(const juce::String& name) const;
-
-    /** Create a fallback profile when unknown */
-    PluginProfile createDefaultProfile(const juce::String& pluginId,
-                                       const juce::String& name);
+    static juce::Result saveProfile (const juce::File& file,
+                                     const PluginProfile& profile);
 
 private:
-    juce::Array<PluginProfile> loadedProfiles;
+    // Helpers
+    static juce::String getStringProp (const juce::DynamicObject* obj,
+                                       const juce::Identifier& key,
+                                       const juce::String& defaultValue = {});
+
+    static bool getBoolProp (const juce::DynamicObject* obj,
+                             const juce::Identifier& key,
+                             bool defaultValue = false);
+
+    static int getIntProp (const juce::DynamicObject* obj,
+                           const juce::Identifier& key,
+                           int defaultValue = 1);
+
+    static juce::Result migrateIfNeeded (PluginProfile& profile);
 };

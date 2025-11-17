@@ -1,153 +1,143 @@
 #include "PluginProfileFactory.h"
 
-// ===== Helpers =================================================
-
-static juce::String getStringProp(const juce::DynamicObject* obj,
-                                  const juce::Identifier& key)
+//==============================================================================
+juce::String PluginProfileFactory::getStringProp (const juce::DynamicObject* obj,
+                                                  const juce::Identifier& key,
+                                                  const juce::String& defaultValue)
 {
-    if (!obj->hasProperty(key)) return {};
-    return obj->getProperty(key).toString();
+    if (! obj->hasProperty (key))
+        return defaultValue;
+
+    return obj->getProperty (key).toString();
 }
 
-static bool getBoolProp(const juce::DynamicObject* obj,
-                        const juce::Identifier& key,
-                        bool defaultValue=false)
+//==============================================================================
+bool PluginProfileFactory::getBoolProp (const juce::DynamicObject* obj,
+                                        const juce::Identifier& key,
+                                        bool defaultValue)
 {
-    if (!obj->hasProperty(key)) return defaultValue;
-    return obj->getProperty(key);
+    if (! obj->hasProperty (key))
+        return defaultValue;
+
+    return static_cast<bool> (obj->getProperty (key));
 }
 
-static void getStringArrayProp(const juce::DynamicObject* obj,
-                               const juce::Identifier& key,
-                               juce::StringArray& out)
+//==============================================================================
+int PluginProfileFactory::getIntProp (const juce::DynamicObject* obj,
+                                      const juce::Identifier& key,
+                                      int defaultValue)
 {
-    out.clear();
+    if (! obj->hasProperty (key))
+        return defaultValue;
 
-    if (!obj->hasProperty(key))
-        return;
-
-    auto value = obj->getProperty(key);
-
-    if (value.isArray())
-    {
-        auto* arr = value.getArray();
-        for (auto& v : *arr)
-            out.add(v.toString());
-    }
-    else
-    {
-        out.add(value.toString());
-    }
+    return static_cast<int> (obj->getProperty (key));
 }
 
-static void getVarArrayProp(const juce::DynamicObject* obj,
-                            const juce::Identifier& key,
-                            juce::Array<juce::var>& out)
+//==============================================================================
+// MIGRATION HOOK — runs automatically if schema version changes
+juce::Result PluginProfileFactory::migrateIfNeeded (PluginProfile& p)
 {
-    out.clear();
+    constexpr int currentSchema = 1;
 
-    if (!obj->hasProperty(key))
-        return;
+    if (p.schemaVersion == currentSchema)
+        return juce::Result::ok();
 
-    auto value = obj->getProperty(key);
+    // --- Future schema migration example ---
+    // if (p.schemaVersion == 0)
+    //     applyChangesForSchema0to1(p);
 
-    if (value.isArray())
-    {
-        auto* arr = value.getArray();
-        for (auto& v : *arr)
-            out.add(v);
-    }
-    else
-    {
-        out.add(value);
-    }
+    p.schemaVersion = currentSchema;
+    return juce::Result::ok();
 }
 
-
-// ===== Factory =================================================
-
-PluginProfileFactory::PluginProfileFactory() = default;
-PluginProfileFactory::~PluginProfileFactory() = default;
-
-
-int PluginProfileFactory::loadProfilesFromDirectory(const juce::File& dir)
-{
-    loadedProfiles.clear();
-
-    if (!dir.exists() || !dir.isDirectory())
-        return 0;
-
-    juce::Array<juce::File> jsonFiles;
-    dir.findChildFiles(jsonFiles, juce::File::findFiles, true, "*.json");
-
-    for (auto& file : jsonFiles)
-    {
-        auto p = loadProfile(file);
-        if (p.has_value())
-            loadedProfiles.add(p.value());
-    }
-
-    return loadedProfiles.size();
-}
-
-
-
-std::optional<PluginProfile> PluginProfileFactory::loadProfile (const juce::File& file)
+//==============================================================================
+// LOAD
+juce::Result PluginProfileFactory::loadProfile (const juce::File& file,
+                                                PluginProfile& outProfile)
 {
     if (! file.existsAsFile())
-        return {};
+        return juce::Result::fail ("File does not exist: " + file.getFullPathName());
 
-    // Load the JSON text
+    // Load JSON text
     const juce::String text = file.loadFileAsString();
 
-    juce::Result status;
-    juce::var parsed = juce::JSON::parse (text, status);
+    juce::Result parseStatus;
+    juce::var parsed = juce::JSON::parse (text, parseStatus);
 
-    if (status.failed() || ! parsed.isObject())
-        return {};
+    if (parseStatus.failed())
+        return juce::Result::fail ("Failed to parse JSON: " + parseStatus.getErrorMessage());
+
+    if (! parsed.isObject())
+        return juce::Result::fail ("JSON root is not an object");
 
     auto* obj = parsed.getDynamicObject();
     if (obj == nullptr)
-        return {};
+        return juce::Result::fail ("JSON root lacks a DynamicObject");
 
+    // ----- Validate required fields -----
+    static const juce::Identifier f_pluginName   ("pluginName");
+    static const juce::Identifier f_pluginId     ("pluginId");
+    static const juce::Identifier f_manufacturer ("manufacturer");
+    static const juce::Identifier f_version      ("version");
+    static const juce::Identifier f_isChunkBased ("isChunkBased");
+    static const juce::Identifier f_isVst2       ("isVst2");
+    static const juce::Identifier f_schemaVer    ("schemaVersion");
+
+    auto require = [&](juce::Identifier key, const char* typeName)
+    {
+        if (! obj->hasProperty(key))
+            return juce::Result::fail ("Missing required field: " + key.toString()
+                                      + " (expected " + juce::String(typeName) + ")");
+        return juce::Result::ok();
+    };
+
+    if (auto r = require(f_pluginName, "string"); r.failed()) return r;
+    if (auto r = require(f_pluginId,   "string"); r.failed()) return r;
+    if (auto r = require(f_manufacturer, "string"); r.failed()) return r;
+    if (auto r = require(f_version, "string"); r.failed()) return r;
+    if (auto r = require(f_isChunkBased, "bool"); r.failed()) return r;
+    if (auto r = require(f_isVst2, "bool"); r.failed()) return r;
+
+    // ----- Populate -----
     PluginProfile p;
+    p.pluginName    = getStringProp(obj, f_pluginName);
+    p.pluginId      = getStringProp(obj, f_pluginId);
+    p.manufacturer  = getStringProp(obj, f_manufacturer);
+    p.version       = getStringProp(obj, f_version);
+    p.isChunkBased  = getBoolProp  (obj, f_isChunkBased);
+    p.isVst2        = getBoolProp  (obj, f_isVst2);
 
-    p.pluginName    = getStringProp (obj, "pluginName");
-    p.pluginId      = getStringProp (obj, "pluginId");
-    p.manufacturer  = getStringProp (obj, "manufacturer");
-    p.version       = getStringProp (obj, "version");
-    p.isChunkBased  = getBoolProp   (obj, "isChunkBased");
-    p.isVst2        = getBoolProp   (obj, "isVst2");
+    // Optional with default
+    p.schemaVersion = getIntProp   (obj, f_schemaVer, 1);
 
-    return p;
+    // ----- Migration if needed -----
+    if (auto r = migrateIfNeeded(p); r.failed())
+        return r;
+
+    outProfile = p;
+    return juce::Result::ok();
 }
 
-
-
-const PluginProfile* PluginProfileFactory::getProfileByName(const juce::String& name) const
+//==============================================================================
+// SAVE
+juce::Result PluginProfileFactory::saveProfile (const juce::File& file,
+                                                const PluginProfile& profile)
 {
-    // direct name match
-    for (auto& p : loadedProfiles)
-        if (p.pluginName.equalsIgnoreCase(name))
-            return &p;
+    juce::DynamicObject::Ptr obj = new juce::DynamicObject();
 
-    // alias match
-    for (auto& p : loadedProfiles)
-        if (p.aliases.contains(name, true))
-            return &p;
+    obj->setProperty ("pluginName",   profile.pluginName);
+    obj->setProperty ("pluginId",     profile.pluginId);
+    obj->setProperty ("manufacturer", profile.manufacturer);
+    obj->setProperty ("version",      profile.version);
+    obj->setProperty ("isChunkBased", profile.isChunkBased);
+    obj->setProperty ("isVst2",       profile.isVst2);
+    obj->setProperty ("schemaVersion",profile.schemaVersion);
 
-    return nullptr;
-}
+    juce::var v (obj.get());
+    auto json = juce::JSON::toString (v, true);
 
+    if (! file.replaceWithText (json))
+        return juce::Result::fail("Failed to write file: " + file.getFullPathName());
 
-
-PluginProfile PluginProfileFactory::createDefaultProfile(const juce::String& pluginId,
-                                                         const juce::String& name)
-{
-    PluginProfile p;
-    p.pluginId   = pluginId;
-    p.pluginName = name;
-    p.isVst2     = true;
-    p.isChunkBased = true;
-    return p;
+    return juce::Result::ok();
 }
