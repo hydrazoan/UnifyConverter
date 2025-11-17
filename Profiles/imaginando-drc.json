@@ -1,0 +1,13 @@
+{
+  "pluginName": "DRC - Polyphonic Synthesizer",
+  "pluginId": "IMDR",
+  "manufacturer": "Imaginando",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Imaginando DRC - Polyphonic synthesizer with extensive modulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

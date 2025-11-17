@@ -1,0 +1,13 @@
+{
+  "pluginName": "impOSCar 3",
+  "pluginId": "GFO3",
+  "manufacturer": "GForce Software",
+  "version": "3.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce impOSCar 3 - Latest version of OSCar emulation with enhanced modulation and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

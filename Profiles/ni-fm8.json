@@ -1,0 +1,13 @@
+{
+  "pluginName": "FM8",
+  "pluginId": "NIF8",
+  "manufacturer": "Native Instruments",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Native Instruments FM8 - Advanced FM synthesizer based on classic DX7. Chunk-based with matrix and effects.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

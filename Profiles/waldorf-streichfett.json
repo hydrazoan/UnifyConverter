@@ -1,0 +1,13 @@
+{
+  "pluginName": "Streichfett",
+  "pluginId": "WaSt",
+  "manufacturer": "Waldorf",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf Streichfett - String synthesizer with solo synth section. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

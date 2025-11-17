@@ -1,0 +1,13 @@
+{
+  "pluginName": "DLYM - Delay Modulator",
+  "pluginId": "IMDL",
+  "manufacturer": "Imaginando",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Effect",
+  "profileAuthor": "PresetConverter",
+  "notes": "Imaginando DLYM - Creative delay and modulation effect. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "JX-3P",
+  "pluginId": "RC3P",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JX-3P - Polyphonic synthesizer with DCO oscillators. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

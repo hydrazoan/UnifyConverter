@@ -1,0 +1,13 @@
+{
+  "pluginName": "Phoscyon",
+  "pluginId": "D1Ph",
+  "manufacturer": "D16 Group",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "D16 Phoscyon - TB-303 clone with enhanced features and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

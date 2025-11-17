@@ -1,0 +1,13 @@
+{
+  "pluginName": "TAL-Pha",
+  "pluginId": "TPHA",
+  "manufacturer": "TAL Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "TAL-Pha - Alpha Juno emulation with authentic DCO sound and PG-300 programmer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

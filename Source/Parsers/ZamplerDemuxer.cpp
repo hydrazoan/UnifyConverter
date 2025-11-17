@@ -10,7 +10,7 @@ static juce::String toAsciiSafe(const void* data, size_t size)
     {
         const unsigned char ch = (unsigned char) c[i];
         if (ch == '\r' || ch == '\n' || (ch >= 0x20 && ch <= 0x7E))
-            s << juce::String::charToString((juce_wchar) ch);
+            s << juce::String::charToString((juce::juce_wchar) ch);
         else
             s << (juce::String) ""; // skip binary
     }
@@ -61,8 +61,9 @@ std::vector<PresetData> ZamplerDemuxer::splitByMarkers(const PluginProfile& prof
     auto* obj = json.getDynamicObject();
     if (!obj) return out;
 
-    const auto markersVar = obj->getProperty("demuxMarkers");
-    const int  minBlock   = (int) obj->getProperty("minBlockBytes", 2048);
+    auto& props = obj->getProperties();
+    juce::var markersVar = props["demuxMarkers"];
+    const int  minBlock   = (int) props.getWithDefault("minBlockBytes", 2048);
 
     juce::StringArray markers;
     if (markersVar.isArray())

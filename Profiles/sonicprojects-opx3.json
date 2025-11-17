@@ -1,0 +1,13 @@
+{
+  "pluginName": "OP-X PRO-III",
+  "pluginId": "SP3X",
+  "manufacturer": "Sonic Projects",
+  "version": "3.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Sonic Projects OP-X PRO-III - Latest version of Oberheim OB-X emulation with enhanced features. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "TyrellN6",
+  "pluginId": "U9T6",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he TyrellN6 - Free compact virtual analog synthesizer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

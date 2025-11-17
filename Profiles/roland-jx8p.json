@@ -1,0 +1,13 @@
+{
+  "pluginName": "JX-8P",
+  "pluginId": "RCJX",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JX-8P - Digital analog modeling synthesizer from the 80s. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

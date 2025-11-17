@@ -1,7 +1,6 @@
 #include "Vst2Parser.h"
 #include <cstring>
 #include "../Utility/FormatHelpers.h"
-
 using namespace FormatHelpers;
 
 static juce::String fixedName(const char* bytes, size_t len)

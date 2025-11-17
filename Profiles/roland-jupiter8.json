@@ -1,0 +1,13 @@
+{
+  "pluginName": "JUPITER-8",
+  "pluginId": "RCJ8",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JUPITER-8 - Legendary analog polysynth with rich, warm sound. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

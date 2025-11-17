@@ -1,0 +1,13 @@
+{
+  "pluginName": "M-Tron Pro IV",
+  "pluginId": "GFM4",
+  "manufacturer": "GForce Software",
+  "version": "4.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Sampler",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce M-Tron Pro IV - Latest Mellotron emulation with enhanced features. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

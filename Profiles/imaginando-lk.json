@@ -1,0 +1,13 @@
+{
+  "pluginName": "LK - Ableton Link Metronome",
+  "pluginId": "IMLK",
+  "manufacturer": "Imaginando",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Utility",
+  "profileAuthor": "PresetConverter",
+  "notes": "Imaginando LK - Ableton Link enabled metronome and sync tool. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

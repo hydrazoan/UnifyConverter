@@ -39,9 +39,9 @@ bool UnifyPatchGenerator::savePatch(const PresetData& preset, const juce::File& 
     }
     else if (preset.parameters.size() > 0)
     {
-        juce::Array<var> params;
+        juce::Array<juce::var> params;
         params.ensureStorageAllocated(preset.parameters.size());
-        for (auto v : preset.parameters) params.add(var(v));
+        for (auto v : preset.parameters) params.add(juce::var(v));
         root->setProperty("parameters", juce::var(params));
     }
 

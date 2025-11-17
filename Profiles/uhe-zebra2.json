@@ -1,0 +1,13 @@
+{
+  "pluginName": "Zebra2",
+  "pluginId": "U9Z2",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he Zebra2 - Modular synthesizer with spectral effects and extensive modulation. Chunk-based with complete patch state.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

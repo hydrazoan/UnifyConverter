@@ -1,0 +1,13 @@
+{
+  "pluginName": "TripleCheese",
+  "pluginId": "U9TC",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he TripleCheese - Lush ensemble string synthesizer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

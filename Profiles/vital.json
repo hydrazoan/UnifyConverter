@@ -1,0 +1,13 @@
+{
+  "pluginName": "Vital",
+  "pluginId": "VITL",
+  "manufacturer": "Matt Tytel",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Vital - Spectral warping wavetable synthesizer with visual workflow. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

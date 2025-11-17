@@ -1,0 +1,13 @@
+{
+  "pluginName": "Minimonsta Melohman Authentic Polysynth",
+  "pluginId": "GFMP",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce MAP - Minimonsta Authentic Polysynth with polyphonic capabilities. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "Minimonsta 2",
+  "pluginId": "GFMi",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce Minimonsta 2 (Minimoog emulation). Chunk-based with vintage Moog character.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

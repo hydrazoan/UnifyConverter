@@ -1,0 +1,13 @@
+{
+  "pluginName": "FRMS - Granular Synthesizer",
+  "pluginId": "IMFR",
+  "manufacturer": "Imaginando",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Imaginando FRMS - Granular synthesizer with spectral processing. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

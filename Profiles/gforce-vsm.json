@@ -1,0 +1,13 @@
+{
+  "pluginName": "Virtual String Machine",
+  "pluginId": "GFVS",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce Virtual String Machine - Solina String Ensemble emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

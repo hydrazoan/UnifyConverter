@@ -1,0 +1,13 @@
+{
+  "pluginName": "CA2600",
+  "pluginId": "CA26",
+  "manufacturer": "Cherry Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Cherry Audio CA2600 - ARP 2600 emulation with semi-modular architecture. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

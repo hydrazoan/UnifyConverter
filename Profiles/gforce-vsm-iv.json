@@ -1,0 +1,13 @@
+{
+  "pluginName": "Virtual String Machine IV",
+  "pluginId": "GFV4",
+  "manufacturer": "GForce Software",
+  "version": "4.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce Virtual String Machine IV - Latest Solina String Ensemble emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

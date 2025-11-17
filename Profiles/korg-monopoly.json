@@ -1,0 +1,13 @@
+{
+  "pluginName": "Mono/Poly",
+  "pluginId": "KoMP",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg Mono/Poly - 4-VCO monosynth that can split into 4-voice polysynth. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

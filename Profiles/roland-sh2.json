@@ -1,0 +1,13 @@
+{
+  "pluginName": "SH-2",
+  "pluginId": "RC02",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud SH-2 - Dual VCO monophonic synthesizer with cross-modulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

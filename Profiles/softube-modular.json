@@ -1,0 +1,13 @@
+{
+  "pluginName": "Modular",
+  "pluginId": "SBMD",
+  "manufacturer": "Softube",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Softube Modular - Virtual modular synthesizer system with extensive routing. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

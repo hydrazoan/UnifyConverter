@@ -1,0 +1,13 @@
+{
+  "pluginName": "ARP Odyssey",
+  "pluginId": "KoAO",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg ARP Odyssey - Recreation of the classic ARP Odyssey duophonic synth. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

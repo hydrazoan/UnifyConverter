@@ -1,0 +1,13 @@
+{
+  "pluginName": "Minimoog",
+  "pluginId": "UAMm",
+  "manufacturer": "Universal Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Universal Audio Minimoog - Authentic Minimoog Model D emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

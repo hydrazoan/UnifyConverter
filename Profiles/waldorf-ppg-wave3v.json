@@ -1,0 +1,13 @@
+{
+  "pluginName": "PPG Wave 3.V",
+  "pluginId": "WaPW",
+  "manufacturer": "Waldorf",
+  "version": "2.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf PPG Wave 3.V version 2 - Classic wavetable synthesizer emulation. Chunk-based with complete wavetable and modulation state.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

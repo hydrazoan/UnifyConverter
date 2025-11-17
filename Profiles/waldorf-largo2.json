@@ -1,0 +1,13 @@
+{
+  "pluginName": "Largo 2",
+  "pluginId": "WaL2",
+  "manufacturer": "Waldorf",
+  "version": "2.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf Largo 2 - Virtual analog synthesizer with wavetables and filters. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

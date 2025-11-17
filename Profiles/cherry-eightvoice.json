@@ -1,0 +1,13 @@
+{
+  "pluginName": "Eight Voice",
+  "pluginId": "CA8V",
+  "manufacturer": "Cherry Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Cherry Audio Eight Voice - Oberheim Eight Voice (SEM-based) emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

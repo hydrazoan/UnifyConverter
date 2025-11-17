@@ -1,0 +1,13 @@
+{
+  "pluginName": "Massive X",
+  "pluginId": "NIMX",
+  "manufacturer": "Native Instruments",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Native Instruments Massive X - Next generation wavetable synthesizer. Chunk-based with routing and modulation.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

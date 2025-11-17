@@ -1,0 +1,13 @@
+{
+  "pluginName": "JD-800",
+  "pluginId": "RCJD",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JD-800 - Digital synthesizer with extensive real-time control. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

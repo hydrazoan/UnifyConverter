@@ -1,0 +1,13 @@
+{
+  "pluginName": "KORG M1",
+  "pluginId": "KoM1",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg M1 - Legendary workstation with iconic 80s/90s sounds. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

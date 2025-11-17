@@ -1,0 +1,13 @@
+{
+  "pluginName": "PS-20",
+  "pluginId": "CAP2",
+  "manufacturer": "Cherry Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Cherry Audio PS-20 - Korg PS-3100 inspired polyphonic synthesizer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

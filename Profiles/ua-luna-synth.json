@@ -1,0 +1,13 @@
+{
+  "pluginName": "LUNA Synth",
+  "pluginId": "UALS",
+  "manufacturer": "Universal Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Universal Audio LUNA Synth - Virtual analog synthesizer with Moog-inspired sound. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "Analog Lab",
+  "pluginId": "ArAL",
+  "manufacturer": "Arturia",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Arturia Analog Lab - Preset player for V Collection synthesizers. Chunk-based with multi-instrument support.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

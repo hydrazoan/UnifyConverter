@@ -1,0 +1,13 @@
+{
+  "pluginName": "TAL-U-NO-LX",
+  "pluginId": "TUNO",
+  "manufacturer": "TAL Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "TAL U-NO-LX (Juno-60 emulation) is chunk-based. Authentic Juno chorus and analog modeling.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "OB-1",
+  "pluginId": "GFO1",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce OB-1 - Oberheim OB-1 inspired monosynth. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

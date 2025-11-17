@@ -1,0 +1,13 @@
+{
+  "pluginName": "GX-80",
+  "pluginId": "CAGX",
+  "manufacturer": "Cherry Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Cherry Audio GX-80 - Yamaha CS-80 emulation with vintage polyphonic sound. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

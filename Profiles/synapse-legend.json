@@ -1,0 +1,13 @@
+{
+  "pluginName": "Legend",
+  "pluginId": "SyLe",
+  "manufacturer": "Synapse Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Synapse Audio Legend - Minimoog inspired virtual analog synthesizer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

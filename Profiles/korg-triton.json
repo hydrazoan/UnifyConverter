@@ -1,0 +1,13 @@
+{
+  "pluginName": "TRITON",
+  "pluginId": "KoTr",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg TRITON - Professional workstation with HI synthesis and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

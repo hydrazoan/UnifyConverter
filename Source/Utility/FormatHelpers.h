@@ -4,6 +4,7 @@
 
 using uint8 = juce::uint8;
 using int32 = juce::int32;
+using uint32 = juce::uint32;
 
 namespace FormatHelpers
 {

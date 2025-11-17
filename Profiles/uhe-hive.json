@@ -1,0 +1,13 @@
+{
+  "pluginName": "Hive",
+  "pluginId": "U9Hv",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he Hive - Streamlined synthesizer for quick sound design. Chunk-based with efficient CPU usage.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

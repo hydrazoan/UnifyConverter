@@ -1,0 +1,13 @@
+{
+  "pluginName": "OB-E",
+  "pluginId": "UAOB",
+  "manufacturer": "Universal Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Universal Audio OB-E - Oberheim OB-E eight-voice polysynth emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

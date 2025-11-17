@@ -1,0 +1,13 @@
+{
+  "pluginName": "Bass Station",
+  "pluginId": "GFBS",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce Bass Station - Novation Bass Station emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

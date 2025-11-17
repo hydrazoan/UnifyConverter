@@ -1,0 +1,13 @@
+{
+  "pluginName": "JUNO-106",
+  "pluginId": "RCJ6",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JUNO-106 - Authentic emulation of the classic JUNO-106 analog polysynth. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

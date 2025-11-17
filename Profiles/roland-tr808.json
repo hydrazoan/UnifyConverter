@@ -1,0 +1,13 @@
+{
+  "pluginName": "TR-808",
+  "pluginId": "RC08",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Drums",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud TR-808 - Legendary drum machine with iconic analog sounds. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

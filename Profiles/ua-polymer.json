@@ -1,0 +1,13 @@
+{
+  "pluginName": "Polymer",
+  "pluginId": "UAPo",
+  "manufacturer": "Universal Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Universal Audio Polymer - Modular polyphonic synthesizer with analog modeling. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

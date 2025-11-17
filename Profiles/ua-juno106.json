@@ -1,0 +1,13 @@
+{
+  "pluginName": "JUNO-106",
+  "pluginId": "UAJ6",
+  "manufacturer": "Universal Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Universal Audio JUNO-106 - Authentic Roland JUNO-106 emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

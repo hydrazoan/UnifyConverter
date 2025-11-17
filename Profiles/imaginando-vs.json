@@ -1,0 +1,13 @@
+{
+  "pluginName": "VS - Visual Synthesizer",
+  "pluginId": "IMVS",
+  "manufacturer": "Imaginando",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Imaginando VS - Visual synthesizer with innovative modular interface. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

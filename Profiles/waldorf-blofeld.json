@@ -1,0 +1,13 @@
+{
+  "pluginName": "Blofeld",
+  "pluginId": "WaBl",
+  "manufacturer": "Waldorf",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf Blofeld wavetable synthesizer. Chunk-based with full wavetable and modulation state.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "OP-X D3",
+  "pluginId": "SPD3",
+  "manufacturer": "Sonic Projects",
+  "version": "3.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Sonic Projects OP-X D3 - Oberheim OB-X digital version with modern features. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

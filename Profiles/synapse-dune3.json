@@ -1,0 +1,13 @@
+{
+  "pluginName": "DUNE 3",
+  "pluginId": "SyD3",
+  "manufacturer": "Synapse Audio",
+  "version": "3.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Synapse Audio DUNE 3 - Multi-synthesis workstation with layers and arpeggiator. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

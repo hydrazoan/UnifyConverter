@@ -1,0 +1,13 @@
+{
+  "pluginName": "modwave",
+  "pluginId": "KoMw",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg modwave - Wavetable synthesizer with Motion Sequencing and Kaoss Physics. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

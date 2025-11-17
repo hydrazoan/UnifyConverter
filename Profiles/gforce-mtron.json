@@ -1,0 +1,13 @@
+{
+  "pluginName": "M-Tron Pro",
+  "pluginId": "GFMT",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Sampler",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce M-Tron Pro - Mellotron emulation with tape replay modeling. Chunk-based with sample playback.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

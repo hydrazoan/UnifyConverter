@@ -1,0 +1,13 @@
+{
+  "pluginName": "Mercury-6",
+  "pluginId": "CAM6",
+  "manufacturer": "Cherry Audio",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Cherry Audio Mercury-6 - Roland Juno-6/60 emulation with chorus. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

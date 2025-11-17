@@ -1,0 +1,13 @@
+{
+  "pluginName": "Icarus",
+  "pluginId": "T2Ic",
+  "manufacturer": "Tone2",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Tone2 Icarus - Phaseshaping synthesizer with unique sound design capabilities. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

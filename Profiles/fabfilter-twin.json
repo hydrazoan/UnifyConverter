@@ -1,0 +1,13 @@
+{
+  "pluginName": "Twin",
+  "pluginId": "FFTw",
+  "manufacturer": "FabFilter",
+  "version": "2.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "FabFilter Twin 2 - Powerful synthesizer with high-quality filters and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

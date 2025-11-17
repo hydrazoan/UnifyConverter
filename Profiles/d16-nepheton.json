@@ -1,0 +1,13 @@
+{
+  "pluginName": "Nepheton",
+  "pluginId": "D1Ne",
+  "manufacturer": "D16 Group",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Drums",
+  "profileAuthor": "PresetConverter",
+  "notes": "D16 Nepheton - TR-808 drum machine emulation with enhanced controls. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

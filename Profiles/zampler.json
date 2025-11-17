@@ -1,0 +1,13 @@
+{
+  "pluginName": "Zampler RX",
+  "pluginId": "ZMPL",
+  "manufacturer": "Zampler Sounds",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Sampler",
+  "profileAuthor": "PresetConverter",
+  "notes": "Zampler RX is a chunk-based plugin, so all preset data is stored in binary chunks. No individual parameter mappings are needed.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "MS-20",
+  "pluginId": "KoMS",
+  "manufacturer": "Korg",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Korg MS-20 - Classic semi-modular analog synthesizer with aggressive filters. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

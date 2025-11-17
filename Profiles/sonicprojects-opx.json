@@ -1,0 +1,13 @@
+{
+  "pluginName": "OP-X PRO-II",
+  "pluginId": "SPOP",
+  "manufacturer": "Sonic Projects",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Sonic Projects OP-X PRO-II - Oberheim OB-X emulation with authentic analog modeling. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

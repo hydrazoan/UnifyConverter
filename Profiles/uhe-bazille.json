@@ -1,0 +1,13 @@
+{
+  "pluginName": "Bazille",
+  "pluginId": "U9Bz",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he Bazille - Modular synthesizer with FM, phase distortion, and fractal resonance. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

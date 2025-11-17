@@ -1,0 +1,13 @@
+{
+  "pluginName": "PolyKB III",
+  "pluginId": "XLPK",
+  "manufacturer": "XILS-lab",
+  "version": "3.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "XILS-lab PolyKB III - RSF PolyKobol emulation with analog polysynth character. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

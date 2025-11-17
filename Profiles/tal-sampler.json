@@ -1,0 +1,13 @@
+{
+  "pluginName": "TAL-Sampler",
+  "pluginId": "TSMP",
+  "manufacturer": "TAL Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Sampler",
+  "profileAuthor": "PresetConverter",
+  "notes": "TAL Sampler - Virtual analog sampler with filters and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

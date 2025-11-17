@@ -1,0 +1,13 @@
+{
+  "pluginName": "Saurus",
+  "pluginId": "T2Sa",
+  "manufacturer": "Tone2",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Tone2 Saurus - Warm analog modeling synthesizer with vintage character. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

@@ -1,0 +1,13 @@
+{
+  "pluginName": "Phase Plant",
+  "pluginId": "PHPL",
+  "manufacturer": "Kilohearts",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Kilohearts Phase Plant - Modular polyphonic synthesizer with snapin effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

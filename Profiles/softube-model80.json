@@ -1,0 +1,13 @@
+{
+  "pluginName": "Model 80",
+  "pluginId": "SB80",
+  "manufacturer": "Softube",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Softube Model 80 - Polyphonic analog synthesizer emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

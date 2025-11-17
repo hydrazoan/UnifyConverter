@@ -1,0 +1,13 @@
+{
+  "pluginName": "JUPITER-X",
+  "pluginId": "RCJX",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud JUPITER-X - Modern Jupiter with multiple sound engines and effects. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

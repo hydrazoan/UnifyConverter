@@ -1,0 +1,13 @@
+{
+  "pluginName": "Sylenth1",
+  "pluginId": "LDSy",
+  "manufacturer": "Lennar Digital",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Lennar Digital Sylenth1 - Virtual analog synthesizer with warm sound and low CPU. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

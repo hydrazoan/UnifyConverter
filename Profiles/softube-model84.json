@@ -1,0 +1,13 @@
+{
+  "pluginName": "Model 84",
+  "pluginId": "SB84",
+  "manufacturer": "Softube",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Softube Model 84 - Polyphonic analog synthesizer emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

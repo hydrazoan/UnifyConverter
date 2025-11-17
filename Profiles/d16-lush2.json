@@ -1,0 +1,13 @@
+{
+  "pluginName": "Lush-2",
+  "pluginId": "D1L2",
+  "manufacturer": "D16 Group",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "D16 Lush-2 - Advanced version of LuSH-101 with more features. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

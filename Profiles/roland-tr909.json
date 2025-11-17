@@ -1,0 +1,13 @@
+{
+  "pluginName": "TR-909",
+  "pluginId": "RC09",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Drums",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud TR-909 - Classic drum machine defining house and techno. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

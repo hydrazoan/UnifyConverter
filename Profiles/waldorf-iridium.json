@@ -1,0 +1,13 @@
+{
+  "pluginName": "Iridium",
+  "pluginId": "WaIr",
+  "manufacturer": "Waldorf",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf Iridium - Digital keyboard synthesizer with wavetables, samples, and resonator. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

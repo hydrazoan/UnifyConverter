@@ -1,0 +1,13 @@
+{
+  "pluginName": "ACE",
+  "pluginId": "U9Ac",
+  "manufacturer": "u-he",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "U-he ACE - Any Cable Everywhere semi-modular synthesizer. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

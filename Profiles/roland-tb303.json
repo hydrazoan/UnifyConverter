@@ -1,0 +1,13 @@
+{
+  "pluginName": "TB-303",
+  "pluginId": "RC03",
+  "manufacturer": "Roland Cloud",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Roland Cloud TB-303 - Iconic bass synthesizer that defined acid house. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

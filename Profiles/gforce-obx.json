@@ -1,0 +1,13 @@
+{
+  "pluginName": "OB-X",
+  "pluginId": "GFOX",
+  "manufacturer": "GForce Software",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "GForce OB-X - Oberheim OB-X polysynth emulation. Chunk-based.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}

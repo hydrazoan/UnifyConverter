@@ -1,0 +1,13 @@
+{
+  "pluginName": "Quantum",
+  "pluginId": "WaQu",
+  "manufacturer": "Waldorf",
+  "version": "1.0",
+  "isChunkBased": true,
+  "isVst2": true,
+  "defaultLayerType": "Synth",
+  "profileAuthor": "PresetConverter",
+  "notes": "Waldorf Quantum - Hybrid synthesizer with particle synthesis, wavetables, and analog modeling. Chunk-based with complete modulation matrix.",
+  "requiredSamples": [],
+  "parameterMappings": []
+}
