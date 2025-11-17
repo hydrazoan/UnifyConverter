@@ -92,42 +92,32 @@ int PluginProfileFactory::loadProfilesFromDirectory(const juce::File& dir)
 
 
 
-std::optional<PluginProfile> PluginProfileFactory::loadProfile(const juce::File& file)
+std::optional<PluginProfile> PluginProfileFactory::loadProfile (const juce::File& file)
 {
-    auto result = juce::JSON::parse(file);
-
-    if (!result.wasOk())
+    if (! file.existsAsFile())
         return {};
 
-    auto parsed = result.getResult();
-    if (!parsed.isObject())
+    // Load the JSON text
+    const juce::String text = file.loadFileAsString();
+
+    juce::Result status;
+    juce::var parsed = juce::JSON::parse (text, status);
+
+    if (status.failed() || ! parsed.isObject())
         return {};
 
     auto* obj = parsed.getDynamicObject();
-    if (!obj)
+    if (obj == nullptr)
         return {};
 
     PluginProfile p;
 
-    p.pluginName       = getStringProp(obj, "pluginName");
-    p.pluginId         = getStringProp(obj, "pluginId");
-    p.manufacturer     = getStringProp(obj, "manufacturer");
-    p.version          = getStringProp(obj, "version");
-
-    p.isChunkBased     = getBoolProp(obj, "isChunkBased");
-    p.isVst2           = getBoolProp(obj, "isVst2");
-    p.isVst3           = getBoolProp(obj, "isVst3");
-
-    p.defaultLayerType = getStringProp(obj, "defaultLayerType");
-    p.profileAuthor    = getStringProp(obj, "profileAuthor");
-    p.notes            = getStringProp(obj, "notes");
-
-    getStringArrayProp(obj, "aliases",         p.aliases);
-    getStringArrayProp(obj, "requiredSamples", p.requiredSamples);
-    getVarArrayProp(obj, "parameterMappings",  p.parameterMappings);
-
-    if (!p.isValid())
-        return {};
+    p.pluginName    = getStringProp (obj, "pluginName");
+    p.pluginId      = getStringProp (obj, "pluginId");
+    p.manufacturer  = getStringProp (obj, "manufacturer");
+    p.version       = getStringProp (obj, "version");
+    p.isChunkBased  = getBoolProp   (obj, "isChunkBased");
+    p.isVst2        = getBoolProp   (obj, "isVst2");
 
     return p;
 }
